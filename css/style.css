@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #171E24;
+  min-height: 100vh;
+}
+
+header {
+  background-color: black;
+  text-align: center;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+}
+
+nav {
+  background-color: #434343;
+  color: white;
+  height: 5vh;
+}
+
+nav ul a {
+  text-decoration: none;
+}
+
+nav ul a li {
+  padding: 1vh;
+  list-style: none;
+  color: white;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+main {
+  height: auto;
+}
+
+main #mainHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+main #mainHead h3 {
+  padding: 1vh;
+  font-size: 5vh;
+  color: white;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main #mainHead select {
+  margin: 1vh;
+  justify-self: flex-end;
+}
+
+#movies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.movieCard {
+  width: 28%;
+  height: 30vh;
+  min-width: 450px;
+  margin: 3vh;
+  padding: 2vh;
+  background-color: #111111;
+  color: #CECECE;
+}
+
+@media screen and (max-width: 960px) {
+  .movieCard {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .movieCard {
+    width: 90%;
+  }
+}
+
+.movieCard img {
+  float: left;
+  height: 100%;
+  width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding-right: 20px;
+}
+
+.movieCard .movieCardText {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.movieCard .movieCardText h2 {
+  width: 100%;
+}
+
+.movieCard .movieCardText .likeDiv {
+  justify-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 1vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  color: #2EA33A;
+}
+
+.movieCard .movieCardText .likeDiv div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 35px;
+  background-color: #2EA33A;
+  color: white;
+}
+
+.movieCard .likeDiv:hover {
+  cursor: pointer;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,102 @@
+var data = [
+    {
+        "id":0,
+        "title":"Mononoke Hime",
+        "descibtion":"A pro nature Anime epos. About Gods, Nature and Men",
+        "genre":"anime",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/mononoke.jpg"
+    },
+    {
+        "id":1,
+        "title":"Harry Potter and the philosophers stone",
+        "descibtion":"The boy who lived easily gets by everything",
+        "genre":"fantasy",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/harryPotter1.jpg"
+    },
+    {
+        "id":2,
+        "title":"Star Wars",
+        "descibtion":"Just boring stuff",
+        "genre":"sci-fi",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/starWars.jpg"
+    },
+    {
+        "id":3,
+        "title":"Titanic",
+        "descibtion":"Biggest ship ever crashes into iceberg",
+        "genre":"romance",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/titanic.jpg"
+    },
+    {
+        "id":4,
+        "title":"JAWS",
+        "descibtion":"Shark terrifies a whole city",
+        "genre":"thriller",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/jaws.png"
+    },
+    {
+        "id":5,
+        "title":"The Exorcist",
+        "descibtion":"Little girl says horrible things and pukes at churchman",
+        "genre":"horror",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/exorcist.jpg"
+    },
+    {
+        "id":6,
+        "title":"Snow White and the seven Dwarfs",
+        "descibtion":"Classic Snow White Fairitale told by Disney",
+        "genre":"animation",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/snow.jpg"
+    },
+    {
+        "id":7,
+        "title":"Ben-Hur",
+        "descibtion":"You can break a man's skull. You can arrest him. You can throw him in a dungeon. But how do you fight an idea?",
+        "genre":"action",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/ben.jpg"
+    },
+    {
+        "id":8,
+        "title":"Avatar",
+        "descibtion":"Pocahontas in space",
+        "genre":"sci-fi",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/avatar.jpg"
+    },
+    {
+        "id":9,
+        "title":"Jurassic Park",
+        "descibtion":"Dinosaurs gone wild",
+        "genre":"sci-fi",
+        "likes":0,
+        "views":0,
+        "viewed":false,
+        "poster":"./img/jurassic.jpg"
+    }
+]
