@@ -34,6 +34,13 @@ window.onunload = saveDB();
 document.getElementById("movieDetails").addEventListener("click", function(){
     document.getElementById("movieDetails").style.display = "none";
 })
+document.getElementById("add").addEventListener("click", function(){
+    document.getElementById("newMovie").style.display = "block";
+})
+document.getElementById("insertButton").addEventListener("click", function(){
+    addMovie();
+    document.getElementById("newMovie").style.display = "none"
+})
 
 
 function sortMovies() {
@@ -57,6 +64,18 @@ function sortMovies() {
                 return 0;
             });
             break;
+        case 4:localDB.sort(function (b, a) {
+            if (a.id < b.id) return 1;
+            if (a.id > b.id) return -1;
+            return 0;
+        });
+        break;
+        case 5:localDB.sort(function (a, b) {
+            if (a.id < b.id) return 1;
+            if (a.id > b.id) return -1;
+            return 0;
+        });
+        break;
     }
     return localDB;
 }
@@ -122,11 +141,48 @@ function saveDB() {
 }
 
 function getMovieDB() {
-    let local = localStorage.getItem("movieDB")
+    let local;
+    try{
+    local = localStorage.getItem("movieDB");
+    } catch{
+    local = null;
+    }
     if (local == "null"||local == null) {
         movieDB = data;
     } else {
         movieDB = JSON.parse(localStorage.getItem("movieDB"));
     }
     localStorage.setItem("movieDB", JSON.stringify(movieDB));
+}
+
+function addMovieToDB(){
+    let title = document.getElementById("newTitle").value;
+    let descibtion = document.getElementById("shortDes").value;
+    let genre = document.getElementById("genre").value;
+    let poster = document.getElementById("posterLink").value;
+    let longDescribtion = document.getElementById("longDes").value;
+
+    let newMovie = new Movie(title,descibtion,genre,poster,longDescribtion);
+    newMovie.id = movieDB.length;
+    movieDB.push(newMovie);
+}
+
+function addMovie(){
+    addMovieToDB();
+    fillMovieList(sortMovies());
+    saveDB();
+}
+
+class Movie{
+    constructor(title,descibtion,genre,poster,longDescribtion){
+        this.title = title;
+        this.descibtion = descibtion;
+        this.genre = genre;
+        this.poster = poster;
+        this.longDescribtion = longDescribtion;
+        this.viewed = false;
+        this.views = 0;
+        this.likes = 0;
+        this.id = 0;
+    }
 }

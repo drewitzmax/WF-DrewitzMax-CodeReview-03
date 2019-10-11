@@ -22,7 +22,7 @@
             </a>
         </ul>
     </nav>
-    <div id="movieDetails"></div> 
+    <div id="movieDetails"></div>
     <main>
         <div id="mainHead">
             <h3>Movies</h3>
@@ -30,6 +30,8 @@
                 <option value="1" selected>A-Z</option>
                 <option value="2">Z-A</option>
                 <option value="3">Likes</option>
+                <option value="4">Added First</option>
+                <option value="5">Added Last</option>
             </select>
         </div>
         <div id="movies">
@@ -37,7 +39,46 @@
         </div>
         <div id="add">Add your Favorite Films</div>
     </main>
-
+    <div id="newMovie">
+        <div id="newMovieForm">
+            <h1>Add your Favorite Movies</h1>
+            <div>
+                <p>Title:</p>
+                <input type="text" id="newTitle">
+            </div>
+            <div>
+                <p>Year:</p>
+                <input type="text" id="year">
+            </div>
+            <div>
+                <p>Genre:</p>
+                <select name="" id="genre">
+                    <option value="fantasy">Fantasy</option>
+                    <option value="horror">Horror</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="romance">Romance</option>
+                    <option value="action">Action</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="anime">Anime</option>
+                    <option value="animation">Animation</option>
+                </select>
+            </div>
+            <div>
+                <p>Description:</p>
+                <input type="text" id="shortDes">
+            </div>
+            <div>
+                <p>Long Description</p>
+                <input type="text" id="longDes">
+            </div>
+            <div>
+                <p>Movie Poster Link</p>
+                <input type="text" id="posterLink">
+            </div>
+            <br>
+            <input type="button" value="Insert new Movie" id="insertButton">
+        </div>
+    </div>
     <footer>
         <h1>Movie Factory</h1>
     </footer>
