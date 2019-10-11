@@ -25,7 +25,7 @@ function startPage() {
     getMovieDB();
     fillMovieList(sortMovies(movieDB));
     document.getElementById("sort").addEventListener("change", function () {
-        fillMovieList(sortMovies());
+        fillMovieList(sortMovies(getGenreMovies()));
     })
 }
 
