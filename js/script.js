@@ -1,17 +1,29 @@
 var movieDB = [];
 
+function printMovieDetails(id){
+    let movies = document.getElementById("movieDetails");
+    let movie;
+    for(let element of movieDB ){
+        if(element.id == id){
+            movie = element;
+        }
+    }
+    movies.innerHTML="";
+    printMovie(movie,movies);
+}
+
 function fillMovieList(movieList) {
     let movies = document.getElementById("movies");
     movies.innerHTML="";
     for (let movie of movieList) {
-        printMovie(movie);
+        printMovie(movie, movies);
     }
 
 }
 
 function startPage(){
     getMovieDB();
-    fillMovieList(movieDB);
+    fillMovieList(sortMovies());
     document.getElementById("sort").addEventListener("change",function(){
         fillMovieList(sortMovies());
     })
@@ -19,6 +31,9 @@ function startPage(){
 
 window.onload = startPage();
 window.onunload = saveDB();
+document.getElementById("movieDetails").addEventListener("click", function(){
+    document.getElementById("movieDetails").style.display = "none";
+})
 
 
 function sortMovies() {
@@ -47,24 +62,36 @@ function sortMovies() {
 }
 
 
-function printMovie(movie) {
+function printMovie(movie, movies) {
     let movieCard = document.createElement("div");
     movieCard.className = "movieCard";
     movieCard.id = movie.id;
 
+    let addMovieDetail = function(){
+        printMovieDetails(movieCard.id);
+    }
+
     let moviePoster = document.createElement("img");
     moviePoster.src = movie.poster;
+    moviePoster.addEventListener("click", addMovieDetail);
 
     let text = document.createElement("div");
     text.className = "movieCardText";
 
     let movieTitle = document.createElement("h2");
     movieTitle.textContent = movie.title;
+    movieTitle.addEventListener("click", addMovieDetail);
     let movieDescription = document.createElement("p");
     movieDescription.textContent = movie.descibtion;
 
     text.appendChild(movieTitle);
     text.appendChild(movieDescription);
+    if(movies.id == "movieDetails"){
+        let longDescription = document.createElement("p");
+        longDescription.textContent = movie.longDescribtion;
+        text.appendChild(longDescription);
+        movies.style.display = "block";
+    }
 
     /*Like Div*/
     let likeDiv = document.createElement("div");
@@ -95,7 +122,8 @@ function saveDB() {
 }
 
 function getMovieDB() {
-    if (localStorage.getItem("movieDB") == []) {
+    let local = localStorage.getItem("movieDB")
+    if (local == "null"||local == null) {
         movieDB = data;
     } else {
         movieDB = JSON.parse(localStorage.getItem("movieDB"));
