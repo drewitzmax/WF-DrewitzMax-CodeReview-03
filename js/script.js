@@ -43,7 +43,9 @@ document.getElementById("add").addEventListener("click", function () {
 })
 document.getElementById("insertButton").addEventListener("click", function () {
     addMovie();
-    document.getElementById("newMovie").style.display = "none"
+    document.getElementById("newMovieForm").style.display = "none";
+    document.getElementById("newMovie").style.display = "none";
+
 })
 document.getElementById("genreSelect").addEventListener("change", function () {
     let genre = document.getElementById("genreSelect").value;
@@ -225,7 +227,7 @@ function getGenreMovies() {
 
 function addMovie() {
     addMovieToDB();
-    fillMovieList(sortMovies());
+    fillMovieList(sortMovies(getGenreMovies()));
     saveDB();
 }
 
