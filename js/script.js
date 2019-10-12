@@ -36,6 +36,7 @@ document.getElementById("movieDetails").addEventListener("click", function () {
 })
 document.getElementById("add").addEventListener("click", function () {
     document.getElementById("newMovie").style.display = "block";
+    document.getElementById("newMovieForm").style.display = "flex";
     document.getElementById("newMovie").addEventListener("click", function (){
         document.getElementById("newMovie").style.display = "none";
     })
