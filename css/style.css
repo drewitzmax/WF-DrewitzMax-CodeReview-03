@@ -244,11 +244,21 @@ main #mainHead select {
 }
 
 .genreDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 5px;
   margin: 5px;
   background-color: #5e5e5e;
   color: white;
   border-radius: 2vh;
+  text-transform: capitalize;
 }
 
 #newMovie {

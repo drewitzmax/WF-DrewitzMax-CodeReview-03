@@ -210,11 +210,15 @@ main {
     width:100%;
 }
 .genreDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
     margin: 5px;
     background-color: rgb(94, 94, 94);
     color: white;
     border-radius: 2vh;
+    text-transform: capitalize;
 }
 
 #newMovie{

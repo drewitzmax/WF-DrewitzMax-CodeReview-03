@@ -37,7 +37,7 @@ document.getElementById("movieDetails").addEventListener("click", function () {
 document.getElementById("add").addEventListener("click", function () {
     document.getElementById("newMovie").style.display = "block";
     document.getElementById("newMovieForm").style.display = "flex";
-    document.getElementById("newMovie").addEventListener("click", function (){
+    document.getElementById("newMovie").addEventListener("click", function () {
         document.getElementById("newMovie").style.display = "none";
     })
     document.getElementById("newMovieForm").addEventListener("click", e => e.stopPropagation())
@@ -50,17 +50,19 @@ document.getElementById("insertButton").addEventListener("click", function () {
 })
 document.getElementById("genreSelect").addEventListener("change", function () {
     let genre = document.getElementById("genreSelect").value;
-    let genreDiv = document.createElement("span");
-    genreDiv.textContent = genre;
-    genreDiv.id = genre;
-    genreDiv.className = "genreDiv";
-    genreDiv.addEventListener("click", function () {
-        genreDiv.parentNode.removeChild(genreDiv);
-        fillMovieList(sortMovies(getGenreMovies()));
-    })
+    if (document.getElementById(genre) == null) {
+        let genreDiv = document.createElement("span");
+        genreDiv.textContent = genre;
+        genreDiv.id = genre;
+        genreDiv.className = "genreDiv";
+        genreDiv.addEventListener("click", function () {
+            genreDiv.parentNode.removeChild(genreDiv);
+            fillMovieList(sortMovies(getGenreMovies()));
+        })
 
-    document.getElementById("selectedGenres").appendChild(genreDiv);
+        document.getElementById("selectedGenres").appendChild(genreDiv);
     fillMovieList(sortMovies(getGenreMovies()));
+    } 
 })
 
 
